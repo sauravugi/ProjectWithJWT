@@ -1,12 +1,19 @@
 package com.saurav.controller;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.saurav.configuration.SecurityUser;
+import com.saurav.configuration.jwt.JwtUtils;
 import com.saurav.exceptions.AdminException;
 import com.saurav.exceptions.CustomerException;
 import com.saurav.exceptions.OrderException;
@@ -23,6 +32,9 @@ import com.saurav.models.Admin;
 import com.saurav.models.Customer;
 import com.saurav.models.Orders;
 import com.saurav.models.Product;
+import com.saurav.payload.request.LoginRequest;
+import com.saurav.payload.response.JwtResponse;
+import com.saurav.repository.AdminRepo;
 import com.saurav.service.AdminService;
 
 @RestController
@@ -30,7 +42,17 @@ import com.saurav.service.AdminService;
 public class AdminController {
 	
 	@Autowired
+	AuthenticationManager authenticationManager;
+	
+	@Autowired
+	PasswordEncoder encoder;
+
+	@Autowired
+	JwtUtils jwtUtils;
+	
+	@Autowired
 	private AdminService adminService;
+	
 	
 	
 	@PostMapping("/admin/register")
@@ -40,7 +62,7 @@ public class AdminController {
 		
 		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
 	}
-	
+	/*
 	@GetMapping("/admin/login/{user}/{password}")
 	public ResponseEntity<String> loginAdminHandler (@PathVariable String user ,@PathVariable String password) throws AdminException{
 		
@@ -48,6 +70,25 @@ public class AdminController {
 		
 		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
 	}
+	*/
+	
+	  @PostMapping("/admin/login")
+	  public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+
+	    Authentication authentication = authenticationManager.authenticate(
+	        new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+
+	    SecurityContextHolder.getContext().setAuthentication(authentication);
+	    String jwt = jwtUtils.generateJwtToken(authentication);
+	    
+	    SecurityUser userDetails = (SecurityUser) authentication.getPrincipal();
+
+	    return ResponseEntity.ok(new JwtResponse(jwt,
+					    		"Bearer",
+					    		userDetails.getUsername(),  
+	                         	"ADMIN"));
+	  }
+
 	
 	@PostMapping("/admin/update")
 	public ResponseEntity<String> updateAdminHandler(@Valid @RequestBody Admin admin) throws AdminException{
