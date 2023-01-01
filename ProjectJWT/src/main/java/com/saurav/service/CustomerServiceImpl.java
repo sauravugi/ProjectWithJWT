@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.saurav.exceptions.*;
@@ -21,12 +22,16 @@ public class CustomerServiceImpl implements CustomerService{
 	
 	@Autowired
 	private OrderRepo orderRepo;
+	
+	@Autowired
+	PasswordEncoder encoder;
 
 	@Override
 	public Customer registerCustomer(Customer customer) throws CustomerException {
 
 		if(customer == null) throw new CustomerException("Enter Valid Customer....!");
 		
+		customer.setPassword(encoder.encode(customer.getPassword()));
 		Customer cust = customerRepo.save(customer);
 		
 		return cust;

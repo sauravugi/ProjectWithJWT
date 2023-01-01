@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.saurav.exceptions.AdminException;
@@ -32,11 +33,16 @@ public class AdminServiceImpl implements AdminService {
 	
 	@Autowired
 	private OrderRepo orderRepo;
+	
+	@Autowired
+	PasswordEncoder encoder;
 
 	@Override
 	public String registerAdmin(Admin admin) throws AdminException {
 		
 		if(admin==null) throw new AdminException("Enter Valid Admin Details..!");
+		
+		admin.setPassword(encoder.encode(admin.getPassword()));
 		
 		adminRepo.save(admin);
 		
