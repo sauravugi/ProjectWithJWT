@@ -14,6 +14,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -54,7 +55,7 @@ public class AdminController {
 	private AdminService adminService;
 	
 	
-	
+	@CrossOrigin
 	@PostMapping("/admin/register")
 	public ResponseEntity<String> registerAdminHandler(@Valid @RequestBody Admin admin) throws AdminException{
 		
