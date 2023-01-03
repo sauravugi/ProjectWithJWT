@@ -47,7 +47,7 @@ public class AdminServiceImpl implements AdminService {
 		
 		adminRepo.save(admin);
 		
-		return new Message("Register Sucessfully....! "+admin.getEmail());
+		return new Message("Account Register With Email :- "+admin.getEmail());
 	}
 
 	@Override
@@ -59,7 +59,7 @@ public class AdminServiceImpl implements AdminService {
 		
 		if(opt.get().getPassword().equals(password)==false)  throw new AdminException("Enter Valid Admin Password..!");
 		
-		return new Message("Login Sucessfully with Id "+opt.get().getAdminId());
+		return new Message("Login Sucessfully with AdminId "+opt.get().getAdminId());
 	}
 
 	@Override
@@ -154,7 +154,7 @@ public class AdminServiceImpl implements AdminService {
 		
 		List<Customer> customers = customerRepo.findAll();
 		
-		if(customers.size()==0) throw new CustomerException("NO Product Available...!");
+		if(customers.size()==0) throw new CustomerException("NO Customer Available...!");
 		
 		return customers;
 	}
