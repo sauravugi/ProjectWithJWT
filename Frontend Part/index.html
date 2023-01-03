@@ -78,11 +78,29 @@
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="submit1">Save</button>
+                    <button type="button" class="btn btn-primary" id="submit1" data-toggle="modal" data-target="#exampleModal1">Save</button>
                     </div>
                 </div>
                 </div>
             </div>
+
+            <!-- Message Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Response Message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body" id="message1">
+                    
+                    </div>
+                </div>
+                </div>
+            </div>
+
             <button class="btn" data-toggle="modal" data-target="#exampleModalCenter2"><a href="#modal">Log In</a></button>
                             <!-- Modal for Log In Admin-->
                             <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -95,24 +113,42 @@
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form>
+                                        <form id="myform2">
                                             <div class="form-group">
                                                 <label class="col-form-label">Email :- </label>
-                                                <input type="text" class="form-control" id="recipient-email" placeholder="Enter Email">
+                                                <input type="text" class="form-control" id="loginadminemail" placeholder="Enter Email">
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-form-label">Password :- </label>
-                                                <input type="text" class="form-control" id="recipient-password" placeholder="Enter Password">
+                                                <input type="text" class="form-control" id="loginadminpassword" placeholder="Enter Password">
                                               </div>
                                           </form>
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" id="submit2">Save</button>
+                                    <button type="button" class="btn btn-primary" id="submit2" data-toggle="modal" data-target="#exampleModal2">Save</button>
                                     </div>
                                 </div>
                                 </div>
                             </div>
+
+                                       <!-- Message Modal -->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Response Message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body" id="message2">
+                    
+                    </div>
+                </div>
+                </div>
+            </div>
+
         </div>
         <div class="User">
             <h3 style="margin-top: 20px ;">User Page</h3>
@@ -129,28 +165,47 @@
                         </button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form id="myform3">
                                 <div class="form-group">
                                   <label class="col-form-label">Name :- </label>
-                                  <input type="text" class="form-control" id="recipient-name" placeholder="Enter Name">
+                                  <input type="text" class="form-control" id="signupusername" placeholder="Enter Name">
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Email :- </label>
-                                    <input type="text" class="form-control" id="recipient-email" placeholder="Enter Email">
+                                    <input type="text" class="form-control" id="signupuseremail" placeholder="Enter Email">
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Password :- </label>
-                                    <input type="text" class="form-control" id="recipient-password" placeholder="Enter Password">
+                                    <input type="text" class="form-control" id="signupuserpassword" placeholder="Enter Password">
                                   </div>
                               </form>
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="submit3">Save</button>
+                        <button type="button" class="btn btn-primary" id="submit3" data-toggle="modal" data-target="#exampleModal3">Save</button>
                         </div>
                     </div>
                     </div>
                 </div>
+
+                           <!-- Message Modal -->
+            <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Response Message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body" id="message3">
+                    
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
                 <button class="btn" data-toggle="modal" data-target="#exampleModalCenter4"><a href="#modal">Log In</a></button>
                                 <!-- Modal for Log In User-->
                                 <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -163,24 +218,42 @@
                                         </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form>
+                                            <form id="myform4">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Email :- </label>
-                                                    <input type="text" class="form-control" id="recipient-email" placeholder="Enter Email">
+                                                    <input type="text" class="form-control" id="loginuseremail" placeholder="Enter Email">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-form-label">Password :- </label>
-                                                    <input type="text" class="form-control" id="recipient-password" placeholder="Enter Password">
+                                                    <input type="text" class="form-control" id="loginuserpassword" placeholder="Enter Password">
                                                   </div>
                                               </form>
                                         </div>
                                         <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary" id="submit4">Save</button>
+                                        <button type="button" class="btn btn-primary" id="submit4" data-toggle="modal" data-target="#exampleModal4">Save</button>
                                         </div>
                                     </div>
                                     </div>
                                 </div>
+
+                                           <!-- Message Modal -->
+            <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Response Message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body" id="message4">
+                    
+                    </div>
+                </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -191,6 +264,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
 
+//Sign Up Admin
 let submit1 = document.querySelector("#submit1");
 submit1.addEventListener("click" , async function(e){
     e.preventDefault();
@@ -206,21 +280,147 @@ submit1.addEventListener("click" , async function(e){
     console.log(model);
     let link = 'http://localhost:8007/saurav/admin/register' ;
 
-    let res = await fetch( link , {
+    let response = await fetch( link , {
         method : "POST" ,
         body : model ,
         headers :{ "Content-Type" : "application/json" }
     })
     
-    // Here I want to See Response back in After Post in database
-    // where Spring boot Api return Response<String> How to see and Print on the HomePage
-
+    
+    
+    // For closing form tab and reseting
     document.querySelector("#myform1").reset();
-
     $("#exampleModalCenter").modal("toggle");
 
+    response.json().then(data => {
+        document.querySelector("#message1").innerHTML = data.message;
+        console.log(data);
+    })
+    
+    $("#exampleModal").modal("toggle");
 })
 
+// Log In Admin
+let submit2 = document.querySelector("#submit2");
+submit2.addEventListener("click" , async function(e){
+    e.preventDefault();
+
+    let model = {
+        username : document.querySelector("#loginadminemail").value,
+        password : document.querySelector("#loginadminpassword").value
+
+    }
+    
+    model = JSON.stringify(model);
+    console.log(model);
+    let link = 'http://localhost:8007/saurav/admin/login' ;
+
+    let response = await fetch( link , {
+        method : "POST" ,
+        body : model ,
+        headers :{ "Content-Type" : "application/json" }
+    })
+    
+    
+    
+    // For closing form tab and reseting
+    document.querySelector("#myform2").reset();
+    $("#exampleModalCenter2").modal("toggle");
+
+    response.json().then(data => {
+        document.querySelector("#message2").innerHTML = data.token;
+
+        // This we can do simply but Object saving is best approch
+        
+        // localStorage.setItem('token-type',data.type);
+        // localStorage.setItem('token',data.token);
+
+        localStorage.setItem('tokenObject',JSON.stringify({type:data.type,token:data.token}));
+
+        console.log(data);
+    })
+    
+    $("#exampleModal2").modal("toggle");
+
+    window.location.href = "admin.html";
+})
+
+// Sign Up User
+
+let submit3 = document.querySelector("#submit3");
+submit3.addEventListener("click" , async function(e){
+    e.preventDefault();
+
+    let model = {
+        customerName : document.querySelector("#signupusername").value,
+        email : document.querySelector("#signupuseremail").value,
+        password : document.querySelector("#signupuserpassword").value
+
+    }
+    
+    model = JSON.stringify(model);
+    console.log(model);
+    let link = 'http://localhost:8007/saurav/customer/register' ;
+
+    let response = await fetch( link , {
+        method : "POST" ,
+        body : model ,
+        headers :{ "Content-Type" : "application/json" }
+    })
+    
+    
+    
+    // For closing form tab and reseting
+    document.querySelector("#myform3").reset();
+    $("#exampleModalCenter3").modal("toggle");
+
+    response.json().then(data => {
+        document.querySelector("#message3").innerHTML = data.message;
+        console.log(data);
+    })
+    
+    $("#exampleModal3").modal("toggle");
+})
+
+// Log In User
+
+let submit4 = document.querySelector("#submit4");
+submit4.addEventListener("click" , async function(e){
+    e.preventDefault();
+
+    let model = {
+        username : document.querySelector("#loginuseremail").value,
+        password : document.querySelector("#loginuserpassword").value
+
+    }
+    
+    model = JSON.stringify(model);
+    console.log(model);
+    let link = 'http://localhost:8007/saurav/customer/login' ;
+
+    let response = await fetch( link , {
+        method : "POST" ,
+        body : model ,
+        headers :{ "Content-Type" : "application/json" }
+    })
+    
+    
+    
+    // For closing form tab and reseting
+    document.querySelector("#myform4").reset();
+    $("#exampleModalCenter4").modal("toggle");
+
+    response.json().then(data => {
+        document.querySelector("#message4").innerHTML = data.token;
+        console.log(data);
+        localStorage.setItem('tokenObject',JSON.stringify({type:data.type,token:data.token}));
+        
+    })
+    
+    $("#exampleModal4").modal("toggle");
+
+    window.location.href = "user.html";
+})
 
 
 </script>
