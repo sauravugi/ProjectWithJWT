@@ -7,16 +7,17 @@ import com.saurav.exceptions.ProductException;
 import com.saurav.models.Customer;
 import com.saurav.models.Orders;
 import com.saurav.models.Product;
+import com.saurav.payload.response.Message;
 
 public interface CustomerService {
 	
 	public Customer registerCustomer(Customer customer) throws CustomerException;
 	
-	public String updateCustomer(Customer customer) throws CustomerException;
+	public Message updateCustomer(Customer customer) throws CustomerException;
 	
-	public String deleteCustomer(String username,String password) throws CustomerException;
+	public Message deleteCustomer(String username,String password) throws CustomerException;
 	
-	public String loginCustomer(String username,String password) throws CustomerException;
+	public Message loginCustomer(String username,String password) throws CustomerException;
 
 	public List<Product> getAllProducts() throws ProductException;
 	

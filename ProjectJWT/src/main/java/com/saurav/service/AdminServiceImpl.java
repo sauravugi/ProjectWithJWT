@@ -15,6 +15,7 @@ import com.saurav.models.Admin;
 import com.saurav.models.Customer;
 import com.saurav.models.Orders;
 import com.saurav.models.Product;
+import com.saurav.payload.response.Message;
 import com.saurav.repository.AdminRepo;
 import com.saurav.repository.CustomerRepo;
 import com.saurav.repository.OrderRepo;
@@ -38,7 +39,7 @@ public class AdminServiceImpl implements AdminService {
 	PasswordEncoder encoder;
 
 	@Override
-	public String registerAdmin(Admin admin) throws AdminException {
+	public Message registerAdmin(Admin admin) throws AdminException {
 		
 		if(admin==null) throw new AdminException("Enter Valid Admin Details..!");
 		
@@ -46,11 +47,11 @@ public class AdminServiceImpl implements AdminService {
 		
 		adminRepo.save(admin);
 		
-		return "Register Sucessfully....!";
+		return new Message("Register Sucessfully....! "+admin.getEmail());
 	}
 
 	@Override
-	public String loginAdmin(String username, String password) throws AdminException {
+	public Message loginAdmin(String username, String password) throws AdminException {
 		
 		Optional<Admin> opt = adminRepo.findByEmail(username);
 		
@@ -58,11 +59,11 @@ public class AdminServiceImpl implements AdminService {
 		
 		if(opt.get().getPassword().equals(password)==false)  throw new AdminException("Enter Valid Admin Password..!");
 		
-		return "Login Sucessfully with Id "+opt.get().getAdminId();
+		return new Message("Login Sucessfully with Id "+opt.get().getAdminId());
 	}
 
 	@Override
-	public String deleteAdmin(String username, String password) throws AdminException {
+	public Message deleteAdmin(String username, String password) throws AdminException {
 		
 		Optional<Admin> opt = adminRepo.findByEmail(username);
 		
@@ -72,11 +73,11 @@ public class AdminServiceImpl implements AdminService {
 		
 		adminRepo.deleteById(opt.get().getAdminId());
 		
-		return "Delete Sucessfully with Id "+opt.get().getAdminId();
+		return new Message("Delete Sucessfully with Id "+opt.get().getAdminId());
 	}
 
 	@Override
-	public String updateAdmin(Admin admin) throws AdminException {
+	public Message updateAdmin(Admin admin) throws AdminException {
 		
 		Optional<Admin> opt = adminRepo.findById(admin.getAdminId());
 		
@@ -84,7 +85,7 @@ public class AdminServiceImpl implements AdminService {
 		
 		adminRepo.save(admin);
 		
-		return "Updated Sucessfully with Id "+admin.getAdminId();
+		return new Message("Updated Sucessfully with Id "+admin.getAdminId());
 		
 	}
 
@@ -129,13 +130,13 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public String addProduct(Product product) throws ProductException {
+	public Message addProduct(Product product) throws ProductException {
 		
 		if(product == null) throw new ProductException("Enter Valid Product Details");
 		
 		productRepo.save(product);
 		
-		return "Sucessfully Added "+product.getProductName();
+		return new Message("Sucessfully Added "+product.getProductName());
 	}
 
 	@Override

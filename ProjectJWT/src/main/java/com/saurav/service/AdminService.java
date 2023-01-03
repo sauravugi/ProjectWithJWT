@@ -10,16 +10,17 @@ import com.saurav.models.Admin;
 import com.saurav.models.Customer;
 import com.saurav.models.Orders;
 import com.saurav.models.Product;
+import com.saurav.payload.response.Message;
 
 public interface AdminService {
 	
-	public String registerAdmin(Admin admin) throws AdminException;
+	public Message registerAdmin(Admin admin) throws AdminException;
 	
-	public String loginAdmin(String username,String password) throws AdminException;
+	public Message loginAdmin(String username,String password) throws AdminException;
 	
-	public String deleteAdmin(String username,String password) throws AdminException;
+	public Message deleteAdmin(String username,String password) throws AdminException;
 	
-	public String updateAdmin(Admin admin) throws AdminException;
+	public Message updateAdmin(Admin admin) throws AdminException;
 	
 	public List<Orders> getAllOrders() throws OrderException;
 	
@@ -29,7 +30,7 @@ public interface AdminService {
 	
 	public List<Product> getAllProducts() throws ProductException;
 	
-	public String addProduct(Product product) throws ProductException;
+	public Message addProduct(Product product) throws ProductException;
 	
 	public List<Product> leastQuantityProducts() throws ProductException;
 	

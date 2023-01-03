@@ -35,6 +35,7 @@ import com.saurav.models.Orders;
 import com.saurav.models.Product;
 import com.saurav.payload.request.LoginRequest;
 import com.saurav.payload.response.JwtResponse;
+import com.saurav.payload.response.Message;
 import com.saurav.repository.AdminRepo;
 import com.saurav.service.AdminService;
 
@@ -57,12 +58,14 @@ public class AdminController {
 	
 	@CrossOrigin
 	@PostMapping("/admin/register")
-	public ResponseEntity<String> registerAdminHandler(@Valid @RequestBody Admin admin) throws AdminException{
+	public ResponseEntity<Message> registerAdminHandler(@Valid @RequestBody Admin admin) throws AdminException{
 		
-		String msg = adminService.registerAdmin(admin);
+		Message msg = adminService.registerAdmin(admin);
 		
-		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
+		return new ResponseEntity<Message>(msg,HttpStatus.ACCEPTED);
+		
 	}
+	
 	/*
 	@GetMapping("/admin/login/{user}/{password}")
 	public ResponseEntity<String> loginAdminHandler (@PathVariable String user ,@PathVariable String password) throws AdminException{
@@ -73,6 +76,7 @@ public class AdminController {
 	}
 	*/
 	
+	  @CrossOrigin
 	  @PostMapping("/admin/login")
 	  public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -90,23 +94,25 @@ public class AdminController {
 	                         	"ADMIN"));
 	  }
 
-	
+	@CrossOrigin
 	@PostMapping("/admin/update")
-	public ResponseEntity<String> updateAdminHandler(@Valid @RequestBody Admin admin) throws AdminException{
+	public ResponseEntity<Message> updateAdminHandler(@Valid @RequestBody Admin admin) throws AdminException{
 		
-		String msg = adminService.updateAdmin(admin);
+		Message msg = adminService.updateAdmin(admin);
 		
-		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
+		return new ResponseEntity<Message>(msg,HttpStatus.ACCEPTED);
 	}
-	
+	  
+	@CrossOrigin
 	@DeleteMapping("/admin/delete/{user}/{password}")
-	public ResponseEntity<String> deleteAdminHandler (@PathVariable String user ,@PathVariable String password) throws AdminException{
+	public ResponseEntity<Message> deleteAdminHandler (@PathVariable String user ,@PathVariable String password) throws AdminException{
 		
-		String msg = adminService.deleteAdmin(user, password);
+		Message msg = adminService.deleteAdmin(user, password);
 		
-		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
+		return new ResponseEntity<Message>(msg,HttpStatus.ACCEPTED);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/admin/orders")
 	public ResponseEntity<List<Orders>> getOrdersHandler () throws OrderException{
 		
@@ -115,6 +121,7 @@ public class AdminController {
 		return new ResponseEntity<List<Orders>>(orders,HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/admin/orders/{month}")
 	public ResponseEntity<List<Orders>> getMonthOrdersHandler (@PathVariable Integer month) throws OrderException{
 		
@@ -123,6 +130,7 @@ public class AdminController {
 		return new ResponseEntity<List<Orders>>(orders,HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/admin/dayorders/{day}")
 	public ResponseEntity<List<Orders>> getDayOrdersHandler (@PathVariable Integer day) throws OrderException{
 		
@@ -131,6 +139,7 @@ public class AdminController {
 		return new ResponseEntity<List<Orders>>(orders,HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/admin/products")
 	public ResponseEntity<List<Product>> getProductsHandler () throws ProductException{
 		
@@ -139,14 +148,16 @@ public class AdminController {
 		return new ResponseEntity<List<Product>>(products,HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@PostMapping("/admin/products")
-	public ResponseEntity<String> registerProductHandler(@Valid @RequestBody Product product) throws ProductException{
+	public ResponseEntity<Message> registerProductHandler(@Valid @RequestBody Product product) throws ProductException{
 		
-		String msg = adminService.addProduct(product);
+		Message msg = adminService.addProduct(product);
 		
-		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
+		return new ResponseEntity<Message>(msg,HttpStatus.ACCEPTED);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/admin/leastproducts")
 	public ResponseEntity<List<Product>> getLeastProductsHandler () throws ProductException{
 		
@@ -155,6 +166,7 @@ public class AdminController {
 		return new ResponseEntity<List<Product>>(products,HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/admin/customers")
 	public ResponseEntity<List<Customer>> getCustomersHandler () throws CustomerException{
 		
@@ -163,6 +175,7 @@ public class AdminController {
 		return new ResponseEntity<List<Customer>>(customers,HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/admin/customers/{id}")
 	public ResponseEntity<Customer> getCustomerHandler (@PathVariable Integer id) throws CustomerException{
 		
@@ -174,3 +187,4 @@ public class AdminController {
 	
 
 }
+

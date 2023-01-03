@@ -12,6 +12,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +30,7 @@ import com.saurav.models.Orders;
 import com.saurav.models.Product;
 import com.saurav.payload.request.LoginRequest;
 import com.saurav.payload.response.JwtResponse;
+import com.saurav.payload.response.Message;
 import com.saurav.service.CustomerService;
 
 
@@ -49,6 +51,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 	
+	@CrossOrigin
 	@PostMapping("/customer/register")
 	public ResponseEntity<Customer> registerCustomerHandler(@Valid @RequestBody Customer customer) throws CustomerException{
 		
@@ -57,20 +60,22 @@ public class CustomerController {
 		return new ResponseEntity<Customer>(cust,HttpStatus.ACCEPTED);
 	}
 	
+	@CrossOrigin
 	@PostMapping("/customer/update")
-	public ResponseEntity<String> updateCustomerHandler(@Valid @RequestBody Customer customer) throws CustomerException{
+	public ResponseEntity<Message> updateCustomerHandler(@Valid @RequestBody Customer customer) throws CustomerException{
 		
-		String msg = customerService.updateCustomer(customer);
+		Message msg = customerService.updateCustomer(customer);
 		
-		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
+		return new ResponseEntity<Message>(msg,HttpStatus.ACCEPTED);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping("/customer/delete/{user}/{password}")
-	public ResponseEntity<String> deleteCustomerHandler( @PathVariable String user ,@PathVariable String password) throws CustomerException{
+	public ResponseEntity<Message> deleteCustomerHandler( @PathVariable String user ,@PathVariable String password) throws CustomerException{
 		
-		String msg = customerService.deleteCustomer(user, password);
+		Message msg = customerService.deleteCustomer(user, password);
 		
-		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
+		return new ResponseEntity<Message>(msg,HttpStatus.ACCEPTED);
 	}
 	/*
 	@GetMapping("/customer/login/{user}/{password}")
@@ -82,6 +87,7 @@ public class CustomerController {
 	}
 	*/
 	
+	  @CrossOrigin
 	  @PostMapping("/customer/login")
 	  public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -98,7 +104,8 @@ public class CustomerController {
 					    		userDetails.getUsername(),  
 	                         	"USER"));
 	  }
-	  
+	 
+	@CrossOrigin
 	@GetMapping("/customer")
 	public ResponseEntity<List<Product>> getProductsHandler () throws ProductException{
 		
@@ -107,6 +114,7 @@ public class CustomerController {
 		return new ResponseEntity<List<Product>>(products,HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/customer/{amount}")
 	public ResponseEntity<List<Product>> getProductsByAmountHandler (@PathVariable Integer amount) throws ProductException{
 		
@@ -115,6 +123,7 @@ public class CustomerController {
 		return new ResponseEntity<List<Product>>(products,HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/customer/order/{id}")
 	public ResponseEntity<List<Orders>> getOrdersHandler (@PathVariable Integer id) throws CustomerException{
 		
@@ -123,7 +132,7 @@ public class CustomerController {
 		return new ResponseEntity<List<Orders>>(orders,HttpStatus.OK);
 	}
 	
-	
+	@CrossOrigin
 	@GetMapping("/customer/order/{id}/{productId}/{quantity}")
 	public ResponseEntity<Orders> getOrdersHandler (@PathVariable Integer id,@PathVariable Integer productId,@PathVariable Integer quantity) throws CustomerException, ProductException{
 			

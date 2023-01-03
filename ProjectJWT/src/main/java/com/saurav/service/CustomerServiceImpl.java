@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.saurav.exceptions.*;
 import com.saurav.models.*;
+import com.saurav.payload.response.Message;
 import com.saurav.repository.*;
 
 @Service
@@ -38,7 +39,7 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 
 	@Override
-	public String updateCustomer(Customer customer) throws CustomerException {
+	public Message updateCustomer(Customer customer) throws CustomerException {
 
 		if(customer == null) throw new CustomerException("Enter Valid Customer....!");
 		
@@ -51,12 +52,12 @@ public class CustomerServiceImpl implements CustomerService{
 		else
 			throw new CustomerException("Enter Valid User Password...!");
 		
-		return "Updated Sucessfully with Id "+opt.get().getCustomerId();
+		return new Message("Updated Sucessfully with Id "+opt.get().getCustomerId());
 
 	}
 
 	@Override
-	public String deleteCustomer(String username, String password) throws CustomerException {
+	public Message deleteCustomer(String username, String password) throws CustomerException {
 		
 		Optional<Customer> opt = customerRepo.findByEmail(username);
 		
@@ -67,18 +68,18 @@ public class CustomerServiceImpl implements CustomerService{
 		else
 			throw new CustomerException("Enter Valid User Password...!");
 		
-		return "Delete Sucessfully with Id "+opt.get().getCustomerId();
+		return new Message("Delete Sucessfully with Id "+opt.get().getCustomerId());
 	}
 
 	@Override
-	public String loginCustomer(String username, String password) throws CustomerException {
+	public Message loginCustomer(String username, String password) throws CustomerException {
 		
 		Optional<Customer> opt = customerRepo.findByEmail(username);
 		
 		if(opt.isEmpty()) throw new CustomerException("Enter Valid Email...!");
 		
 		if(opt.get().getPassword().equals(password))
-			return "Customer Login Sucessfully....!";
+			return new Message("Customer Login Sucessfully....!");
 		else
 			throw new CustomerException("Enter Valid User Password...!");
 	}
