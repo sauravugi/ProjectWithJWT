@@ -1,5 +1,5 @@
-# Ecommerce_project(Product Application)
-REST API developed for a Product Application.This API handles an Admin and User and performs all the fundamental CRUD operations of any Product Application platform with user validation at every step.
+# Ecommerce_project(Product Application Using JWT Token)
+REST API developed for a Product Application.This API handles an Admin and User and performs all the fundamental CRUD operations of any Product Application platform with user validation at every step. And In this project we can perform Some Frontend functionality Also Like sign up, Log In, Adding, Buy products.
 This project is developed by me during Project week in Masai School.
 
 ## Badges
@@ -16,27 +16,34 @@ This project is developed by me during Project week in Masai School.
 - MySQL
 - Lambok
 - Swagger Ui
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
 
 ## Modules
 - Login Module
 - Admin Module
 - User Module
 - Product Management Module
+- Index Module(Frontend)
+- Admin Module(Frontend)
+- User Module(Frontend)
 
 ## Features
 
-- User and Admin authentication & validation with session UUID.
+- User and Admin authentication with Jwt Token & validation.
 - Admin Features:
   - Admin can register, log in, log out, update and delete accounts
   - Admin have control over the entire application
-  - Admin can manage User and product.
+  - Admin can manage User, order and product.
   - Admin can access the details of different users and products.
-  - Only logged-in Admin can access all features of Admin
+  - Only logged-in Admin can access all features of Admin and Every Operation perform Only help of JWT Token.
 - User Features:
   - Users can register themselves with the application, logging in and logout into the application
   - Users can buy products and can cancel the products.
   - Users can update, or delete their accounts
-  - Only logged-in users can access all user features
+  - Only logged-in users can access all user features and Every Operation perform Only help of JWT Token.
 
 
 ## Installation and Run
