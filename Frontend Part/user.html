@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Admin|Saurav.com</title>
+    <title>User|Saurav.com</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
     <style>
       #intro{
           margin: auto;
@@ -61,45 +61,45 @@
     </div>
     <div class="Main">
       <div class="Admin">
-          <h3 style="margin-top: 20px ;">User Area</h3>
-          <button class="btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="#modal">Buy Product</a></button>
+          <h3 style="margin-top: 20px ;">User Dashboard</h3>
+          <button class="btn" data-toggle="modal" data-target="#exampleModalCenter8"><a href="#modal">Buy Product</a></button>
           
-              <!-- Modal for Sign Up Admin-->
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <!-- Modal for Buying Product-->
+          <div class="modal fade" id="exampleModalCenter8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                   <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Admin Sign Up</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle">Required Details</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
                   </div>
                   <div class="modal-body">
-                      <form id="myform1">
+                      <form id="myform8">
                           <div class="form-group">
-                            <label class="col-form-label">Name :- </label>
-                            <input type="text" class="form-control" id="signupadminname" placeholder="Enter Name">
+                            <label class="col-form-label">Customer Id :- </label>
+                            <input type="text" class="form-control" id="customerId" placeholder="Enter Customer Id">
                           </div>
                           <div class="form-group">
-                              <label class="col-form-label">Email :- </label>
-                              <input type="text" class="form-control" id="signupadminemail" placeholder="Enter Email">
+                              <label class="col-form-label">Product Id :- </label>
+                              <input type="text" class="form-control" id="productId" placeholder="Enter Product Id">
                           </div>
                           <div class="form-group">
-                              <label class="col-form-label">Password :- </label>
-                              <input type="text" class="form-control" id="signupadminpassword" placeholder="Enter Password">
+                              <label class="col-form-label">Product Quantity :- </label>
+                              <input type="text" class="form-control" id="productquantity" placeholder="Enter Quantity">
                             </div>
                         </form>
                   </div>
                   <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="submit1" data-toggle="modal" data-target="#exampleModal1">Save</button>
+                  <button type="button" class="btn btn-primary" id="submit8" data-toggle="modal" data-target="#exampleModal8">Save</button>
                   </div>
               </div>
               </div>
           </div>
 
-          <!-- Message Modal -->
-          <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <!-- Message Modal Buy Product-->
+          <div class="modal fade" id="exampleModal8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
               <div class="modal-content">
                   <div class="modal-header">
@@ -108,7 +108,7 @@
                       <span aria-hidden="true">&times;</span>
                   </button>
                   </div>
-                  <div class="modal-body" id="message1">
+                  <div class="modal-body" id="message8">
                   
                   </div>
               </div>
@@ -116,12 +116,12 @@
           </div>
 
           <button class="btn" data-toggle="modal" data-target="#exampleModalCenter2"><a href="#modal">Find by Price</a></button>
-                          <!-- Modal for Log In Admin-->
+                          <!-- Modal for Find By price-->
                           <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
                                   <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLongTitle">Admin Sign Up</h5>
+                                  <h5 class="modal-title" id="exampleModalLongTitle">Product by Amount-Wise</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                   </button>
@@ -129,13 +129,9 @@
                                   <div class="modal-body">
                                       <form id="myform2">
                                           <div class="form-group">
-                                              <label class="col-form-label">Email :- </label>
-                                              <input type="text" class="form-control" id="loginadminemail" placeholder="Enter Email">
+                                              <label class="col-form-label">Amount</label>
+                                              <input type="text" class="form-control" id="amountwise" placeholder="Enter Amount">
                                           </div>
-                                          <div class="form-group">
-                                              <label class="col-form-label">Password :- </label>
-                                              <input type="text" class="form-control" id="loginadminpassword" placeholder="Enter Password">
-                                            </div>
                                         </form>
                                   </div>
                                   <div class="modal-footer">
@@ -146,23 +142,66 @@
                               </div>
                           </div>
 
-                                     <!-- Message Modal -->
-          <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Response Message</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-                  </div>
-                  <div class="modal-body" id="message2">
-                  
-                  </div>
-              </div>
-              </div>
-          </div>
-          <button class="btn"><a href="">Orders</a></button>
+                                     <!-- Message Modal Amount Wise Product -->
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Response Message</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body" id="message2">
+                                
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <button class="btn" data-toggle="modal" data-target="#exampleModalCenter3"><a href="#modal">Orders</a></button>
+                        <!-- Modal for Orders-->
+                        <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Total Orders</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="myform3">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Enter customerId :-</label>
+                                            <input type="text" class="form-control" id="customerorders" placeholder="Enter Customer Id">
+                                        </div>
+                                      </form>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="submit3" data-toggle="modal" data-target="#exampleModal3">Save</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                                   <!-- Message Modal For Orders -->
+                      <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Response Message</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                              </div>
+                              <div class="modal-body" id="message3">
+                              
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                      <!--  Sign Out User Button and Functionality -->
           <button class="btn" id="logoutbtn">Logged Out</button>
       </div>
   </div>
@@ -171,20 +210,14 @@
 </html>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
+    // Sign Out Functionality
+   const token5 = JSON.parse(localStorage.getItem('tokenObject'));
 
-   const token = JSON.parse(localStorage.getItem('tokenObject'));
-
-   document.querySelector("#token").innerHTML = token.token;
+   document.querySelector("#token").innerHTML = token5.token;
 
    const logoutbtn = document.querySelector("#logoutbtn");
 
@@ -194,4 +227,105 @@
     window.location.href = "index.html";
    })
 
+   // Buying Product Functionality
+
+    let submit8 = document.querySelector("#submit8");
+    submit8.addEventListener("click" , async function(e){
+        e.preventDefault();
+
+        const customerId = document.querySelector("#customerId").value;
+        const productId = document.querySelector("#productId").value;
+        const quantity = document.querySelector("#productquantity").value;
+        
+        let link = `http://localhost:8007/saurav/customer/order/${customerId}/${productId}/${quantity}` ;
+
+        let response = await fetch( link , {
+            method : "GET" ,
+            headers :{ "Content-Type" : "application/json",
+                        "Authorization":`Bearer ${token5.token}`
+                    }
+        })
+
+        //"Authorization":"Bearer "+token5.token" Not Possible Because Authorization Time not Concate work
+        
+        
+        // For closing form tab and reseting
+        document.querySelector("#myform8").reset();
+        $("#exampleModalCenter8").modal("toggle");
+
+        response.json().then(data => {
+            document.querySelector("#message8").innerHTML = "Order Id "+data.orderId+", Total Bill "+data.totalBill+", Order Date "+data.orderdate;
+            console.log(data);
+        })
+        
+    })
+
+    // Find Products Amount Wise Functionality
+
+    let submit2 = document.querySelector("#submit2");
+    submit2.addEventListener("click" , async function(e){
+        e.preventDefault();
+
+        const amount = document.querySelector("#amountwise").value;
+        
+        let link = `http://localhost:8007/saurav/customer/${amount}` ;
+
+        let response = await fetch( link , {
+            method : "GET" ,
+            headers :{ "Content-Type" : "application/json",
+                        "Authorization":`Bearer ${token5.token}`
+                    }
+        })
+        
+        
+        
+        // For closing form tab and reseting
+        document.querySelector("#myform2").reset();
+        $("#exampleModalCenter2").modal("toggle");
+
+        response.json().then(data => {
+            let textall = "";
+            data.forEach(el => {
+                textall = textall +"{ Product Name "+el.productName+", Product Id "+el.productId+", Product Price "+el.price+" },";
+                console.log(el);
+            });
+            document.querySelector("#message2").innerHTML = textall;
+            console.log(data);
+        })
+        
+    })
+
+    // Find Orders by Customer Id
+    let submit3 = document.querySelector("#submit3");
+    submit3.addEventListener("click" , async function(e){
+        e.preventDefault();
+
+        const customerId = document.querySelector("#customerorders").value;
+        
+        let link = `http://localhost:8007/saurav/customer/order/${customerId}` ;
+
+        let response = await fetch( link , {
+            method : "GET" ,
+            headers :{ "Content-Type" : "application/json",
+                        "Authorization":`Bearer ${token5.token}`
+                    }
+        })
+        
+        //"Order Date "+el.orderdate+", Total Bill "+el.totalBill
+        
+        // For closing form tab and reseting
+        document.querySelector("#myform3").reset();
+        $("#exampleModalCenter3").modal("toggle");
+
+        response.json().then(data => {
+            let textall = "";
+            data.forEach(el => {
+                textall = textall +"{ Order Id "+el.orderId+", Total Bill "+el.totalBill+" },"
+                console.log(el);
+            });
+            document.querySelector("#message3").innerHTML = textall;
+            console.log(data);
+        })
+        
+    })
 </script>
